@@ -1,0 +1,37 @@
+
+.mx-auto {
+  margin: 20px;
+  text-align: center;
+
+  :global ul.pagination {
+    margin: 0;
+    padding: 5px;
+    display: inline-flex;
+    list-style-type: none;
+
+    & li.page-item {
+      margin-right: 5px;
+
+
+      .page-link {
+
+        a {
+          padding: 10px 15px;
+          // background:aqua;
+          color: var(--white-color);
+          text-decoration: none;
+        }
+
+        &.active a {
+          background-color: black;
+          color: white;
+        }
+
+
+        &:disabled,&.disabled {
+          display: none;
+        }
+      }
+    }
+  }
+}

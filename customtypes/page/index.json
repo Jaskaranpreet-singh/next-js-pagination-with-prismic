@@ -1,0 +1,31 @@
+{
+  "id": "page",
+  "label": "Page",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "movie_cards": {
+              "type": "SharedSlice"
+            },
+            "card_linlks": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

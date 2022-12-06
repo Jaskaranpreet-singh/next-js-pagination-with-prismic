@@ -1,0 +1,212 @@
+{
+  "slices": {
+    "components": {
+      "card_linlks": {
+        "library": "slices",
+        "id": "card_linlks",
+        "name": "CardLinlks",
+        "description": "CardLinlks",
+        "model": {
+          "id": "card_linlks",
+          "type": "SharedSlice",
+          "name": "CardLinlks",
+          "description": "CardLinlks",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "CardLinlks",
+              "primary": {
+                "img": {
+                  "type": "Image",
+                  "config": {
+                    "label": "img",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "title",
+                    "placeholder": ""
+                  }
+                },
+                "link": {
+                  "type": "Link",
+                  "config": {
+                    "label": "link",
+                    "placeholder": "",
+                    "select": null
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "img": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": null,
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da"
+              },
+              "title": "bare",
+              "link": {
+                "link_type": "Web",
+                "url": "https://slicemachine.dev"
+              }
+            },
+            "slice_type": "card_linlks"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "movie_cards": {
+        "library": "slices",
+        "id": "movie_cards",
+        "name": "MovieCards",
+        "description": "MovieCards",
+        "model": {
+          "id": "movie_cards",
+          "type": "SharedSlice",
+          "name": "MovieCards",
+          "description": "MovieCards",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "MovieCards",
+              "primary": {},
+              "items": {
+                "overview": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "overview",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                },
+                "popularity": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "popularity",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "strong,heading6"
+                  }
+                },
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "release_date": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "release_date",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "heading6,strong"
+                  }
+                },
+                "llink": {
+                  "type": "Link",
+                  "config": {
+                    "label": "llink",
+                    "placeholder": "",
+                    "select": null
+                  }
+                },
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "title",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "overview": [
+                  {
+                    "type": "paragraph",
+                    "text": "Ad ipsum eiusmod dolore. Cillum excepteur consectetur proident dolore dolor est non ea dolor. Proident sunt elit proident sit elit.",
+                    "spans": []
+                  }
+                ],
+                "popularity": [
+                  {
+                    "type": "heading6",
+                    "text": "Himself",
+                    "spans": []
+                  }
+                ],
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": null,
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6"
+                },
+                "release_date": [
+                  {
+                    "type": "heading6",
+                    "text": "Enjoy",
+                    "spans": []
+                  }
+                ],
+                "llink": {
+                  "link_type": "Web",
+                  "url": "http://twitter.com"
+                },
+                "title": "rocky"
+              }
+            ],
+            "primary": {},
+            "slice_type": "movie_cards"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      }
+    }
+  }
+}
