@@ -43,7 +43,7 @@ export async function getStaticPaths({ params, context }) {
 
   const testimonials = await client.getByType("page", {
     page: params?.id || 1,
-    pageSize: 8 ,
+    pageSize: 8,
   });
 
 
