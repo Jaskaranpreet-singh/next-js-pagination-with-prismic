@@ -6,9 +6,9 @@ import { createClient } from "../prismicio";
 import { components } from "../slices";
 import { Layout } from "../components/Layout";
 
-const Page = ({ page, navigation, settings }) => {
+const Page = ({ page, navigation, settings,searchBar }) => {
   return (
-    <Layout navigation={navigation} settings={settings}>
+    <Layout navigation={navigation} settings={settings} searchBar={searchBar}>
       <SliceZone slices={page.data.slices} components={components} />
     </Layout>
   );
@@ -16,18 +16,20 @@ const Page = ({ page, navigation, settings }) => {
 
 export default Page;
 
-export async function getStaticProps({ params, locale, previewData }) {
+export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData });
-
-  const page = await client.getByUID("page", params.uid, { lang: locale });
-  const navigation = await client.getSingle("navigation", { lang: locale });
-  const settings = await client.getSingle("settings", { lang: locale });
+  
+  const searchBar = await client.getByType("page")
+  const page = await client.getByUID("page", params.uid, );
+  const navigation = await client.getSingle("navigation", );
+  const settings = await client.getSingle("settings", );
 
   return {
     props: {
       page,
       navigation,
       settings,
+      searchBar
     },
   };
 }
@@ -41,7 +43,6 @@ export async function getStaticPaths() {
     paths: pages.map((page) => {
       return {
         params: { uid: page.uid },
-        locale: page.lang,
       };
     }),
     fallback: false,

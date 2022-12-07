@@ -5,29 +5,21 @@
   "status": true,
   "json": {
     "Main": {
-      "links": {
-        "type": "Group",
+      "text": {
+        "type": "StructuredText",
         "config": {
-          "label": "Links",
-          "fields": {
-            "label": {
-              "type": "StructuredText",
-              "config": {
-                "label": "Label",
-                "placeholder": "Optional - Label for the link",
-                "allowTargetBlank": false,
-                "single": "heading3"
-              }
-            },
-            "link": {
-              "type": "Link",
-              "config": {
-                "label": "Link",
-                "placeholder": "Link for navigation item",
-                "select": null
-              }
-            }
-          }
+          "label": "text",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "links": {
+        "type": "Link",
+        "config": {
+          "label": "links",
+          "placeholder": "",
+          "select": null
         }
       }
     }

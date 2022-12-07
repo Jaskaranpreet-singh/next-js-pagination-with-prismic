@@ -9,42 +9,27 @@ type Simplify<T> = {
 /** Content for Navigation documents */
 interface NavigationDocumentData {
     /**
-     * Links field in *Navigation*
+     * text field in *Navigation*
      *
-     * - **Field Type**: Group
+     * - **Field Type**: Rich Text
      * - **Placeholder**: *None*
-     * - **API ID Path**: navigation.links[]
+     * - **API ID Path**: navigation.text
      * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/group
-     *
-     */
-    links: prismicT.GroupField<Simplify<NavigationDocumentDataLinksItem>>;
-}
-/**
- * Item in Navigation → Links
- *
- */
-export interface NavigationDocumentDataLinksItem {
-    /**
-     * Label field in *Navigation → Links*
-     *
-     * - **Field Type**: Title
-     * - **Placeholder**: Optional - Label for the link
-     * - **API ID Path**: navigation.links[].label
      * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
-    label: prismicT.TitleField;
+    text: prismicT.RichTextField;
     /**
-     * Link field in *Navigation → Links*
+     * links field in *Navigation*
      *
      * - **Field Type**: Link
-     * - **Placeholder**: Link for navigation item
-     * - **API ID Path**: navigation.links[].link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: navigation.links
+     * - **Tab**: Main
      * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
      *
      */
-    link: prismicT.LinkField;
+    links: prismicT.LinkField;
 }
 /**
  * Navigation document from Prismic
@@ -58,6 +43,17 @@ export interface NavigationDocumentDataLinksItem {
 export type NavigationDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<NavigationDocumentData>, "navigation", Lang>;
 /** Content for Page documents */
 interface PageDocumentData {
+    /**
+     * Home field in *Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.home
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    home: prismicT.RichTextField;
     /**
      * Slice Zone field in *Page*
      *
@@ -263,6 +259,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, CardLinlksSliceDefaultPrimary, CardLinlksSliceDefault, CardLinlksSliceVariation, CardLinlksSlice, MovieCardsSliceDefaultItem, MovieCardsSliceDefault, MovieCardsSliceVariation, MovieCardsSlice };
+        export type { NavigationDocumentData, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, CardLinlksSliceDefaultPrimary, CardLinlksSliceDefault, CardLinlksSliceVariation, CardLinlksSlice, MovieCardsSliceDefaultItem, MovieCardsSliceDefault, MovieCardsSliceVariation, MovieCardsSlice };
     }
 }

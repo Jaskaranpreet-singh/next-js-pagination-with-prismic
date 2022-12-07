@@ -12,7 +12,7 @@ const Card = ({ cardData }) => {
           {cardData.map((page, index) => {
             // console.log(page.data.slices[0].primary);
             return (
-              <div className='card'>
+              <div className='card' key={index}>
                <a href={page.url}>
                <img src={page.data.slices[0].primary.img.url} alt="error" /> 
                </a>

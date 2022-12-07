@@ -8,10 +8,9 @@ import { Layout } from "../components/Layout";
 import Pagination from "../components/Pagination/index";
 import Card from "../components/Card/index";
 
-const Index = ({ page, navigation, settings }) => {
-
+const Index = ({ page, navigation, settings,searchBar }) => {
   return (
-    <Layout navigation={navigation} settings={settings}>
+    <Layout navigation={navigation} settings={settings} searchBar={searchBar}>
       <Head>
         {/* <title>{prismicH.asText(page?.data?.title)}</title> */}
       </Head>
@@ -30,21 +29,23 @@ const Index = ({ page, navigation, settings }) => {
 
 export default Index;
 
-export async function getStaticProps({ locale, previewData }) {
+export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
 
   const page = await client.getByType("page", {
     page: 1,
     pageSize: 8
   });
-  const navigation = await client.getSingle("navigation", { lang: locale });
-  const settings = await client.getSingle("settings", { lang: locale });
+  const searchBar = await client.getByType("page")
+  const navigation = await client.getSingle("navigation");
+  const settings = await client.getSingle("settings", );
 
   return {
     props: {
       page,
       navigation,
       settings,
+      searchBar 
     },
   };
 }

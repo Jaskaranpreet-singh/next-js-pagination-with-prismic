@@ -6,10 +6,10 @@ import { createClient } from "../../prismicio";
 
 import { useRouter } from 'next/router'
 
-const page = ({ testimonials, navigation, settings }) => {
+const page = ({ testimonials, navigation, settings,searchBar }) => {
   return (
-    <Layout navigation={navigation} settings={settings}>
-      {console.log(testimonials.results)}
+    <Layout navigation={navigation} settings={settings} searchBar={searchBar}>
+      {/* {console.log(testimonials.results)} */}
       <Card cardData={testimonials.results} />
       <Pagination totalItems={testimonials.total_pages} />
     </Layout>
@@ -20,7 +20,7 @@ export default page;
 
 export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData });
-
+  const searchBar = await client.getByType("page")
   const testimonials = await client.getByType("page", {
     page: params?.id || 1,
     pageSize: 8,
@@ -33,7 +33,8 @@ export async function getStaticProps({ params, previewData }) {
     props: {
       testimonials,
       settings,
-      navigation
+      navigation,
+      searchBar
     },
   };
 }
@@ -48,11 +49,11 @@ export async function getStaticPaths({ params, context }) {
 
 
   const total_pages = testimonials?.total_pages || 1
-  const paths = [];
+  const paths = []; 
+  paths.push({ params: { id: [] } })
   for (let i = 1; i <= total_pages; i++) {
-    paths.push({ params: { id: String(i) } })
+    paths.push({ params: { id: [String(i)] } })
   }
-
   return {
     paths: paths,
     fallback: false,
