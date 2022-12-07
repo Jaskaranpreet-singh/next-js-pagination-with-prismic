@@ -9,6 +9,9 @@ export const Header = ({ navigation, settings, searchBar }) => {
   console.log("------------------------");
   console.log(searchBar);
   console.log("------------------------");
+  console.log("------------------------");
+  console.log( navigation);
+  console.log("------------------------");
 
   return (
     <div className="navbar">
