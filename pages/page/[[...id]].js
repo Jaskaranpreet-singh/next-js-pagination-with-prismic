@@ -47,7 +47,6 @@ export async function getStaticPaths({ params, context }) {
     pageSize: 8,
   });
 
-
   const total_pages = testimonials?.total_pages || 1
   const paths = []; 
   paths.push({ params: { id: [] } })

@@ -1,18 +1,12 @@
+import React, { useState } from 'react'
+import { useEffect } from 'react';
+import Link from 'next/link' 
 import { PrismicLink, PrismicText } from "@prismicio/react";
 import { PrismicRichText } from '@prismicio/react'
 import * as prismicH from "@prismicio/helpers";
-
-import { Bounded } from "./Bounded";
-
+import {SearchBar} from "./Search"
 
 export const Header = ({ navigation, settings, searchBar }) => {
-  console.log("------------------------");
-  console.log(searchBar);
-  console.log("------------------------");
-  console.log("------------------------");
-  console.log( navigation);
-  console.log("------------------------");
-
   return (
     <div className="navbar">
       <nav>
@@ -21,8 +15,8 @@ export const Header = ({ navigation, settings, searchBar }) => {
             <PrismicRichText field={navigation.data.text} />
           </a>
         </ul>
-        <h1>Search Bar</h1>
       </nav>
+      <SearchBar  searchBar={searchBar}/>  
     </div>
   );
 };

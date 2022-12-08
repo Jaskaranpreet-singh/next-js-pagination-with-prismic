@@ -9,22 +9,25 @@ import Pagination from "../components/Pagination/index";
 import Card from "../components/Card/index";
 
 const Index = ({ page, navigation, settings,searchBar }) => {
-  return (
-    <Layout navigation={navigation} settings={settings} searchBar={searchBar}>
-      <Head>
-        {/* <title>{prismicH.asText(page?.data?.title)}</title> */}
-      </Head>
 
-      {/* {console.log(page.results[0].data.slices[0].items)} */}
-      {/* {console.log(page.results)} */}
+    return (
+      <Layout navigation={navigation} settings={settings} searchBar={searchBar}>
+        <Head>
+          {/* <title>{prismicH.asText(page?.data?.title)}</title> */}
+        </Head>
+  
+        {/* {console.log(page.results[0].data.slices[0].items)} */}
+        {/* {console.log(page.results)} */}
+  
+        <Card cardData={page.results} />
+  
+        <Pagination totalItems={page.total_pages} />
+  
+        {/* <SliceZone slices={page.data.slices} components={components} /> */}
+      </Layout>
+    );
+  
 
-      <Card cardData={page.results} />
-
-      <Pagination totalItems={page.total_pages} />
-
-      {/* <SliceZone slices={page.data.slices} components={components} /> */}
-    </Layout>
-  );
 };
 
 export default Index;

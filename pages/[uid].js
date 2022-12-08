@@ -21,7 +21,7 @@ export async function getStaticProps({ params, previewData }) {
   
   const searchBar = await client.getByType("page")
   const page = await client.getByUID("page", params.uid, );
-  const navigation = await client.getSingle("navigation", );
+  const navigation = await client.getSingle("navigation");
   const settings = await client.getSingle("settings", );
 
   return {
