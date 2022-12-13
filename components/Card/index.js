@@ -28,7 +28,7 @@ const Card = ({ cardData ,searchData }) => {
   }
   if (searchData=="") {
     return (
-      <h1>loading...</h1>
+      <h1>Data is not found</h1>
     )
   }
   else 
