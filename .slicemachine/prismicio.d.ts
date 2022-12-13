@@ -81,6 +81,41 @@ type PageDocumentDataSlicesSlice = MovieCardsSlice | CardLinlksSlice;
  * @typeParam Lang - Language API ID of the document.
  */
 export type PageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
+/** Content for search documents */
+interface SearchDocumentData {
+    /**
+     * img field in *search*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: search.img
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    img: prismicT.ImageField<never>;
+    /**
+     * tittle field in *search*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: search.tittle
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    tittle: prismicT.KeyTextField;
+}
+/**
+ * search document from Prismic
+ *
+ * - **API ID**: `search`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SearchDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SearchDocumentData>, "search", Lang>;
 /** Content for Settings documents */
 interface SettingsDocumentData {
     /**
@@ -105,7 +140,7 @@ interface SettingsDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SettingsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SettingsDocumentData>, "settings", Lang>;
-export type AllDocumentTypes = NavigationDocument | PageDocument | SettingsDocument;
+export type AllDocumentTypes = NavigationDocument | PageDocument | SearchDocument | SettingsDocument;
 /**
  * Primary content in CardLinlks → Primary
  *
@@ -259,6 +294,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { NavigationDocumentData, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, CardLinlksSliceDefaultPrimary, CardLinlksSliceDefault, CardLinlksSliceVariation, CardLinlksSlice, MovieCardsSliceDefaultItem, MovieCardsSliceDefault, MovieCardsSliceVariation, MovieCardsSlice };
+        export type { NavigationDocumentData, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SearchDocumentData, SearchDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, CardLinlksSliceDefaultPrimary, CardLinlksSliceDefault, CardLinlksSliceVariation, CardLinlksSlice, MovieCardsSliceDefaultItem, MovieCardsSliceDefault, MovieCardsSliceVariation, MovieCardsSlice };
     }
 }

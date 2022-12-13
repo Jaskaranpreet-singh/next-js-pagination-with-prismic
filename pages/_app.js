@@ -5,6 +5,9 @@ import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "../prismicio";
 import { Heading } from "../components/Heading";
 
+import { Provider } from 'react-redux'
+import { store } from '../components/redux/app/store'
+
 import '../assets/scss/coustom.scss'
 
 
@@ -57,13 +60,16 @@ const richTextComponents = {
 
 export default function App({ Component, pageProps }) {
   return (
+   
     <PrismicProvider
       internalLinkComponent={Link}
       richTextComponents={richTextComponents}
     >
       <PrismicPreview repositoryName={repositoryName}>
         {/* TODO: Remove the following element once you have read the documentation. */}
-        <Component {...pageProps} />
+        <Provider store={store}>
+           <Component {...pageProps} />
+           </Provider>
       </PrismicPreview>
     </PrismicProvider>
   );

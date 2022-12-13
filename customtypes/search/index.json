@@ -1,0 +1,25 @@
+{
+  "id": "search",
+  "label": "search",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "img": {
+        "type": "Image",
+        "config": {
+          "label": "img",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "tittle": {
+        "type": "Text",
+        "config": {
+          "label": "tittle",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

@@ -7,16 +7,20 @@ import * as prismicH from "@prismicio/helpers";
 import {SearchBar} from "./Search"
 
 export const Header = ({ navigation, settings, searchBar }) => {
-  return (
-    <div className="navbar">
-      <nav>
-        <ul>
-          <a href={navigation.data.links.url}>
-            <PrismicRichText field={navigation.data.text} />
-          </a>
-        </ul>
-      </nav>
-      <SearchBar  searchBar={searchBar}/>  
-    </div>
-  );
+  
+  if (searchBar ) {
+    return (
+      <div className="navbar">
+        <nav>
+          <ul>
+            <a href={navigation.data.links.url}>
+              <PrismicRichText field={navigation.data.text} />
+            </a>
+          </ul>
+        </nav>
+        <SearchBar  searchBar={searchBar}/>  
+      </div>
+    );
+  }
+ 
 };

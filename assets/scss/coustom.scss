@@ -92,8 +92,30 @@ html {
       /* margin-bottom: 20px; */
       width: 100vw;
       /* background-color:white; */
-      
-      
+
+     .con{
+      display: flex;
+      width: 50vw;
+     
+input{
+  &:focus {
+    outline: 0;
+    // border: unset ;
+  }
+  &:active {
+    outline: 0;
+    // border: unset;
+  }
+}
+button {  
+  width: 112px;
+  height: 33px;
+  border-radius: 11px;
+  position: relative;
+  top: 20px;
+  left: 5px;
+}
+}    
      }
      @media only screen and (max-width: 490px) {
       .search{
@@ -107,11 +129,25 @@ html {
    
      }
     
-
-
 input{
   width: 250px;
   height: 35px;
  margin-top: 20px;
  border-radius: 7px;
+}
+
+#Search-poster{
+ width: 100vw;
+//  background-color: aqua;
+ display: flex;
+ justify-content: center;
+ img{
+  width: 80%;
+  height: 500px;
+  margin: 10px;
+ }
+}
+h1{
+  text-align: center;
+  margin:10px;
 }
