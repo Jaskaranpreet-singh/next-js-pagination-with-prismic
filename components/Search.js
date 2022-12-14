@@ -64,7 +64,8 @@ export const SearchBar = ({ searchBar }) => {
          
           if (check != "") {
             fun(val)
-            return <div onClick={() => { window.location.href = `http://localhost:3000${val.url}` }} key={key}> {val.data.slices[0].primary.title} </div>
+            {console.log(val.url);}
+            return  <Link href={val.url}>  <div key={key}> {val.data.slices[0].primary.title} </div></Link> 
           } else {
           }
         })} 
