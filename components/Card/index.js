@@ -52,5 +52,5 @@ const Card = ({ cardData ,searchData }) => {
   )
 
 };
-
+  
 export default Card;

@@ -8,14 +8,20 @@ import {SearchBar} from "./Search"
 
 export const Header = ({ navigation, settings, searchBar }) => {
   
+    // console.log("___________________________________________")
+    // console.log(navigation.data.links)
+    // console.log("___________________________________________")
+
+  
   if (searchBar ) {
     return (
       <div className="navbar">
         <nav>
           <ul>
-            <a href={navigation.data.links.url}>
+          <Link href="/">
               <PrismicRichText field={navigation.data.text} />
-            </a>
+              </Link>
+              
           </ul>
         </nav>
         <SearchBar  searchBar={searchBar}/>  

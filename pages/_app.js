@@ -6,7 +6,8 @@ import { repositoryName } from "../prismicio";
 import { Heading } from "../components/Heading";
 
 import { Provider } from 'react-redux'
-import { store } from '../components/redux/app/store'
+import { persistor,store } from '../components/redux/app/store'
+import { PersistGate } from 'redux-persist/integration/react';
 
 import '../assets/scss/coustom.scss'
 
@@ -68,7 +69,9 @@ export default function App({ Component, pageProps }) {
       <PrismicPreview repositoryName={repositoryName}>
         {/* TODO: Remove the following element once you have read the documentation. */}
         <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
            <Component {...pageProps} />
+           </PersistGate>
            </Provider>
       </PrismicPreview>
     </PrismicProvider>

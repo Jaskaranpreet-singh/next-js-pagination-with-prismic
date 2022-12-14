@@ -10,7 +10,6 @@ import Card from "../components/Card/index";
 import { Counter } from "../components/redux/features/counter/Counter";
 
 const Index = ({ page, navigation, settings, searchBar }) => {
-
   return (
     <Layout navigation={navigation} settings={settings} searchBar={searchBar}>
       <Head>
@@ -21,6 +20,7 @@ const Index = ({ page, navigation, settings, searchBar }) => {
       {/* {console.log(page.results)} */}
 
       <Card cardData={page.results} />
+      {console.log(   <Pagination totalItems={page.total_pages} />)}
       <Pagination totalItems={page.total_pages} />
 
       {/* <SliceZone slices={page.data.slices} components={components} /> */}
