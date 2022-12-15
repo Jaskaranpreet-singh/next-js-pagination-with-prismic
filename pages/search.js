@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
+import Link from 'next/link' 
 import { useSelector, useDispatch } from 'react-redux'
 import { createClient } from "../prismicio";
 import { components } from "../slices/";
@@ -13,11 +14,12 @@ const Index = ({search}) => {
   const count = useSelector((state) => state.counter.value)
   return (
     <>
+      <Link href="/"><h1>Home</h1></Link>
     <div id="Search-poster">
       <img src={search.data.img.url} />
     </div>
-    <h1 >{ search.data.tittle }</h1>
-    <h1>Search Result</h1>
+     <h1 >{ search.data.tittle }</h1>
+     <h1>Search Result</h1>
     <Card  searchData={count} />
     </>
   );

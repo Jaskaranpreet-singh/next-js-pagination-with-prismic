@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import * as prismicH from '@prismicio/helpers'
 
-const Card = ({ cardData ,searchData }) => {
+const Card = ({ cardData ,searchData }) => {  
   if (cardData != undefined) {
     return (
       <section>
