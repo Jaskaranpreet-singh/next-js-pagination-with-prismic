@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import { useEffect } from 'react';
 import Link from 'next/link'
 import { useSelector, useDispatch } from 'react-redux'
+import { PrismicLink, PrismicRichText } from '@prismicio/react'
 import { decrement, increment,incrementByAmount } from '../components/redux/features/counter/counterSlice' 
-
-
 
 export const SearchBar = ({ searchBar }) => {
   let data=[];
@@ -64,11 +63,10 @@ export const SearchBar = ({ searchBar }) => {
          
           if (check != "") {
             fun(val)
-            {console.log(val.url);}
-            return  (
-              <a href={val.url}>  
-               <div key={key}>{val.data.slices[0].primary.title} </div>
-             </a> 
+            return  ( 
+              <PrismicLink  field={val.data.slices[0].primary.link}>
+                <div key={key}>{val.data.slices[0].primary.title} </div>
+              </PrismicLink>  
             )
           } else {
           }

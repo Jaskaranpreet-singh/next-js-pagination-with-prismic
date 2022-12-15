@@ -13,9 +13,9 @@ const Card = ({ cardData ,searchData }) => {
               // console.log(page.data.slices[0].primary);
               return (
                 <div className='card' key={index}>
-                  <a href={page.url }>
+                  <PrismicLink  field={page.data.slices[0].primary.link}>
                     <img src={page.data.slices[0].primary.img.url} alt="error" /> 
-                  </a>
+                  </PrismicLink>
                   <h1>{page.data.slices[0].primary.title}</h1>
                 </div>
               )
