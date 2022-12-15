@@ -77,7 +77,10 @@ html {
       cursor: pointer;
       z-index:1;
       position: absolute;
-     
+      a{
+        color: black;
+        text-decoration: none;
+      }     
     }
     .search {
       /* position: fixed; */
@@ -98,6 +101,7 @@ html {
       width: 50vw;
      
 input{
+  padding:10px;
   &:focus {
     outline: 0;
     // border: unset ;
@@ -107,6 +111,7 @@ input{
     // border: unset;
   }
 }
+
 button {  
   width: 112px;
   height: 33px;
@@ -114,6 +119,11 @@ button {
   position: relative;
   top: 20px;
   left: 5px;
+  background-color: #2196F3;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+ 
 }
 }    
      }

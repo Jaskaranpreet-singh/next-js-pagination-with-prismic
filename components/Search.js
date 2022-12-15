@@ -19,10 +19,17 @@ export const SearchBar = ({ searchBar }) => {
 
   
   useEffect(() => {
+    var input = document.getElementById("myInput");
     setItems(searchBar.results);
+    input.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        window.location.replace("/search")
+      }
+    }); 
   }, []);
 
-  
+ 
   function fun(val) {
     data.push(val)
   }
@@ -34,19 +41,27 @@ export const SearchBar = ({ searchBar }) => {
       <div className='logo'>The Movie db</div>
       <div className='con'>
 
-      <input type="text" value={check} placeholder="seach..."
+      <input  id='myInput' type="text" value={check} placeholder="seach..."
         onChange={(e) => {
           checkItems(e.target.value);
           // dispatch(incrementByAmount(["jaskaaran"]))
+          console.log(e)
         
           return (
             setSearchTerm(e.target.value)
           )
-        }} />
-         <button onClick={()=>{      
+        }} 
+         
+        />
+        <Link href="/search"> <button onClick={()=>{
+             console.log("----------")
+              console.log(input);
+             console.log("----------")
+
+          alert("hello")      
             dispatch(incrementByAmount(data))
-        }} > <Link href="/search"> Search</Link>
-        </button>
+        }} >  Search
+        </button></Link>
       
       </div>
     
@@ -65,7 +80,7 @@ export const SearchBar = ({ searchBar }) => {
             fun(val)
             return  ( 
               <PrismicLink   key={key} field={val.data.slices[0].primary.link}>
-                <div>{val.data.slices[0].primary.title} </div>
+                <div> <h3>{val.data.slices[0].primary.title}</h3  ></div>
               </PrismicLink>  
             )
           } else {
