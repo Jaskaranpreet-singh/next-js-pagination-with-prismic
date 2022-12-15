@@ -7,12 +7,6 @@ import * as prismicH from "@prismicio/helpers";
 import {SearchBar} from "./Search"
 
 export const Header = ({ navigation, settings, searchBar }) => {
-  
-    // console.log("___________________________________________")
-    // console.log(navigation.data.links)
-    // console.log("___________________________________________")
-
-  
   if (searchBar ) {
     return (
       <div className="navbar">

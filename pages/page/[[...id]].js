@@ -9,7 +9,6 @@ import { useRouter } from 'next/router'
 const page = ({ testimonials, navigation, settings,searchBar }) => {
   return (
     <Layout navigation={navigation} settings={settings} searchBar={searchBar}>
-      {/* {console.log(testimonials.results)} */}
       <Card cardData={testimonials.results} />
       <Pagination totalItems={testimonials.total_pages} />
     </Layout>

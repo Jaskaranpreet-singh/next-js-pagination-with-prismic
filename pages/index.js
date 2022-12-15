@@ -20,11 +20,8 @@ const Index = ({ page, navigation, settings, searchBar }) => {
       {/* {console.log(page.results)} */}
 
       <Card cardData={page.results} />
-      {console.log(   <Pagination totalItems={page.total_pages} />)}
       <Pagination totalItems={page.total_pages} />
-
       {/* <SliceZone slices={page.data.slices} components={components} /> */}
-
     </Layout>
 
   );

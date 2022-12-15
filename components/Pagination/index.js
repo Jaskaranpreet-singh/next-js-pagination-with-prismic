@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 import styles from "./pagination.module.scss";
 
 const Pagination = ({totalItems}) => {
-  // console.log('totalItems', totalItems);
   let router = useRouter();
   const totalPages = [...Array(totalItems)]
   return (
