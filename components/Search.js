@@ -64,8 +64,8 @@ export const SearchBar = ({ searchBar }) => {
           if (check != "") {
             fun(val)
             return  ( 
-              <PrismicLink  field={val.data.slices[0].primary.link}>
-                <div key={key}>{val.data.slices[0].primary.title} </div>
+              <PrismicLink   key={key} field={val.data.slices[0].primary.link}>
+                <div>{val.data.slices[0].primary.title} </div>
               </PrismicLink>  
             )
           } else {
