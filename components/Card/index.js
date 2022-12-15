@@ -13,10 +13,10 @@ const Card = ({ cardData ,searchData }) => {
               // console.log(page.data.slices[0].primary);
               return (
                 <div className='card' key={index}>
-                 <a href={page.url }>
-                 <img src={page.data.slices[0].primary.img.url} alt="error" /> 
-                 </a>
-                 <h1>{page.data.slices[0].primary.title}</h1>
+                  <a href={page.url }>
+                    <img src={page.data.slices[0].primary.img.url} alt="error" /> 
+                  </a>
+                  <h1>{page.data.slices[0].primary.title}</h1>
                 </div>
               )
             })

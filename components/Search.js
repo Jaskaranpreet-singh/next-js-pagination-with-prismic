@@ -65,7 +65,11 @@ export const SearchBar = ({ searchBar }) => {
           if (check != "") {
             fun(val)
             {console.log(val.url);}
-            return  <Link href={val.url}>  <div key={key}> {val.data.slices[0].primary.title} </div></Link> 
+            return  (
+              <a href={val.url}>  
+               <div key={key}>{val.data.slices[0].primary.title} </div>
+             </a> 
+            )
           } else {
           }
         })} 
