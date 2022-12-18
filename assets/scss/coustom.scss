@@ -161,3 +161,9 @@ h1{
   text-align: center;
   margin:10px;
 }
+
+@media screen and (max-width:1895px) {
+  #card-child {
+  padding-left:9%; 
+  }
+}
