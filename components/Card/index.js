@@ -43,10 +43,8 @@ const Card = ({ cardData ,searchData }) => {
       )
     })}
     </div>
-     
-      </div>
+    </div>
   )
-
 };
-  
+ 
 export default Card;

@@ -12,6 +12,7 @@ export const Header = ({ navigation, settings, searchBar }) => {
       <div className="navbar">
         <nav>
           <ul>
+            <h1>Jaskaranpreet Singh</h1>
           <Link href="/">
               <h1><PrismicRichText field={navigation.data.text} /></h1>
               </Link>   
